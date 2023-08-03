@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<style>
+    .border {
+        border: 2px solid black;
+        width: 80px;
+        padding: 5px;
+    }
+</style>
+<script>
+    $(() => {
+        $('a').on('click',function(event){
+            event.preventDefault() // 超連結就永久失效
+            if($('input').prop('checked')){
+                location.href = $('a').attr('href') // BOM概念
+            }else{
+                $('label').css('color', 'red')
+            }
+        })
+        
+    })
+
+
+</script>
+
+<body>
+    <div class="border">
+        <label>已閱讀</label>
+        <input type="checkbox">
+        <p></p>
+        <a href="https://www.google.com.tw/">Google</a>
+    </div>
+</body>
+
+</html>

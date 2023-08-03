@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<script>
+    $(() => {
+        $('li') // 選取所有li標籤
+            // .first() // 所有li標籤中選第一個
+            // .last() // 所有li標籤中選最後一個
+            // .slice(1,3) // 所有li標籤中選第一個到第二個 
+            // .slice(0,3) // 所有li標籤中選前面三個
+            // .slice(-2) // 所有li標籤中選從後面往前數兩個
+            // .slice(2) // 所有li標籤中選索引值2之後
+            // .odd() // 所有li標籤中選索引值奇數
+            // .even() // 所有li標籤中選索引值偶數
+            // .eq(2) // 所有li標籤中選索引值2的
+            // .not($('li').eq(2)) // 所有li標籤中不選索引值2的
+            // .css('background-color','darkgreen')
+
+            // .first()
+            // .css('background-color','orange')
+
+            // 陣列越界
+            // .eq(1) // 從四個li標籤中，抓索引值1的標籤
+            // .eq(2) // 再從中，抓索引值2的標籤，但沒有這麼長，所以抓不到，最後不會有效果
+            // .css('background-color','orange')
+
+            // 解決方法
+            .eq(1)
+            .css('background-color', 'darkgreen')
+            .parent() // 找上一層父元素，會找到ul標籤
+            .children() // 再找下一層子元素，會再找到四個li標籤
+            .eq(2)
+            .css('background-color', 'orange')
+            .parent() // 再找父元素
+            .siblings() // 再找鄰居
+            .children() // 再找鄰居的子元素
+            .last() // 再找最後一個
+            .css('background-color', 'orange')
+
+        // nth 選擇器
+        $('div ul li:nth-child(2)') // 跟陣列索引值無關，2代表就是第二個標籤
+            .css('background-color', 'orange')
+            .siblings()
+            // .css('background-color', 'gray')
+            .addClass('yellow')
+            .parent()
+            .click(function(){
+                // alert('hi') // 測試點擊有沒有反應
+                $(this)  // 這裡是指ul標籤
+                    .children()
+                    .toggleClass('yellow')
+            })
+
+
+
+    })
+
+
+</script>
+<style>
+    .yellow{
+        background-color: yellowgreen;
+    }
+</style>
+
+<body>
+
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+    </ul>
+    <ul>
+        <li>aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+    </ul>
+    <div>
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+            <li>ddd</li>
+        </ul>
+        <ul>
+    </div>
+
+</body>
+
+</html>

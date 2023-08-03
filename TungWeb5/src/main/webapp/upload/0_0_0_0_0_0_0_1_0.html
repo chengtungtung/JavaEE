@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+<script>
+    $(() => {
+        // // 想要抓取某標籤的某個屬性的值
+        // let n = $('div').attr('x') // attr可以抓到屬性裡的值
+        // console.log(n)
+
+        // // value屬性有特別取值的方式，但有限制只能用在input標籤
+        // n = $('input').val() 
+        // console.log(n)
+        // console.log($('input').prop('checked')) // 會去找input標籤有沒有checked這個屬性
+        // // 通常會用在checkbox
+
+        // // 想要抓到標籤內的內容
+        // console.log($('div').html()) 
+
+        // 想要確認checkbox是否有被使用者勾選
+        $('input').change(function () {
+            console.log($(this).prop('checked'))
+        })
+
+
+    })
+</script>
+
+<body>
+    <div id="a" x='abc' value="hello" target>1</div>
+    <input type="checkbox" value="hi" checked>
+</body>
+
+</html>
