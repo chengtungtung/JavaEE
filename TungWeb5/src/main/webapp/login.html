@@ -4,9 +4,13 @@
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
 	</head>
+	<!-- 登入的主畫面 -->
 	<body>
-		Login Page<hr>
+		登入頁面 Login Page<hr>
+		<!-- 註冊連結，會跳到reg.jsp -->
 		<a href="reg.jsp">Register</a>
+		
+		<!-- 表格資料會傳給checkAccount.jsp做確認，且用post的方式 -->
 		<form action ="checkAccount.jsp" method="post">
 			Account : <input type="text" name="account"><br>
 			Password : <input type="password" name="passwd"><br>

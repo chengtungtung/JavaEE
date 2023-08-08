@@ -14,6 +14,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" ></script>
 		<script type="text/javascript">
 			function add() {
+				// $.get要接收兩個參數
 				// $.get(url的參數,回呼的參數)
 				$.get("addNewGift.jsp?"+
 						"name=" + $('#name').val() +
@@ -23,7 +24,7 @@
 							if(status == 'success'){
 								console.log(data);
 								console.log(data.trim());
-								
+								// trim()的作用是要去除字串頭尾的空格
 								if(data.trim() == 'OK'){
 								// 轉向到main.jsp
 								location.href = "main.jsp";
