@@ -8,7 +8,7 @@
 	
 	// 方法二
 	session.invalidate();
-	response.sendRedirect("tung50.jsp");
+	response.sendRedirect("login.html");
 
 
 %>
